@@ -1,0 +1,5 @@
+<ul>
+  <% @users.each do |username, info_hash| %>
+    <li><a href="/<%= username %>"><%= username %></a></li>
+  <% end %>
+</ul>

@@ -1,0 +1,21 @@
+<ul>
+  <% @users.each do |username, info_hash| %>
+    <% if username.to_s == @username_from_link %>
+      <li>Email is: <%= info_hash[:email] %></li>
+      <% interests_str = info_hash[:interests].map do |item| %>
+        <% item %>
+      <% end.join(", ") %>
+      <li>Interests are: <%= interests_str %></li>
+    <% end %>
+  <% end %>
+</ul>
+
+<div>
+  <ul>
+    <% @users.each do |username, info_hash| %>
+      <% if username.to_s != @username_from_link %>
+        <li><a href="/<%= username %>"><%= username %></a></li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>
